@@ -4,7 +4,6 @@
   };
   outputs = { self, nixpkgs, parsec }: {
     herculesCI.ciSystems = [ "x86_64-linux" ];
-
     packages.aarch64-darwin.default =
       let
         inherit (parsec.lib) parsec;
