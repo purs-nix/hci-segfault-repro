@@ -11,12 +11,11 @@
           inherit parsec;
           l = nixpkgs.lib;
         };
-        result = parser [ ./concur/src ./concur/test ];
+        result = parser [ ./src ];
         mkPackage = pkgs: pkgs.runCommand "pkg" {} ''
-          echo ${builtins.trace result "done"} > $out
+          echo ${builtins.trace result.Main.depends "done"} > $out
         '';
       in {
-        aarch64-darwin.result = result;
         aarch64-darwin.default = mkPackage nixpkgs.legacyPackages.aarch64-darwin.pkgs;
         x86_64-linux.default = mkPackage nixpkgs.legacyPackages.x86_64-linux.pkgs;
       };
