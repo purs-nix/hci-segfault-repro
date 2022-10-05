@@ -27,6 +27,8 @@
          in
          { packages.default = ps.modules.Main.bundle {};
 
+           checks.mytest = ps.test.check {};
+
            devShells.default =
              pkgs.mkShell
                { packages =
