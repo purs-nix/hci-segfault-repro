@@ -23,8 +23,8 @@
                    ];
 
                  dir = ./.;
-                 srcs = [];
-                 test = "";
+                 # srcs = ["src"];
+                 # test = "";
                };
          in
          { packages.default = ps.modules.Main.bundle {};
