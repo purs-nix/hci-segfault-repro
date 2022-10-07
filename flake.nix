@@ -13,7 +13,7 @@
         };
         result = parser [ ./src ];
         mkPackage = pkgs: pkgs.runCommand "pkg" {} ''
-          echo ${builtins.trace result.Main.depends "done"} > $out
+          echo ${builtins.trace result "done"} > $out
         '';
       in {
         aarch64-darwin.default = mkPackage nixpkgs.legacyPackages.aarch64-darwin.pkgs;
