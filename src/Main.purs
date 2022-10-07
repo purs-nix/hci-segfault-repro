@@ -806,4 +806,3 @@ main = do
   log "796 Segfaults are no fun"
   log "797 Segfaults are no fun"
   log "798 Segfaults are no fun"
-  log "799 Segfaults are no fun"
